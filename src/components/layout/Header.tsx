@@ -1,0 +1,58 @@
+import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { photographerInfo } from '@/data/photographer';
+import { cn } from '@/lib/utils';
+
+/**
+ * Main header component with scroll-aware styling
+ * Simple navigation showing only photographer name as home link
+ */
+export function Header() {
+  const location = useLocation();
+  const { isScrolled } = useScrollPosition();
+  
+  // Header is transparent only on homepage hero when not scrolled
+  const isTransparent = location.pathname === '/' && !isScrolled;
+  const isHomepage = location.pathname === '/';
+
+  return (
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+        isTransparent
+          ? 'bg-transparent'
+          : 'bg-background/90 backdrop-blur-lg border-b border-border shadow-sm'
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className={cn(
+          "flex items-center h-16",
+          isHomepage ? "justify-between" : "justify-center"
+        )}>
+          {/* Logo */}
+          <Link
+            to="/"
+            className={cn(
+              'text-lg font-light tracking-widest transition-all duration-300',
+              isTransparent
+                ? 'text-white hover:text-white/80'
+                : 'text-foreground hover:text-foreground/80'
+            )}
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              {photographerInfo.name.toUpperCase()}
+            </motion.span>
+          </Link>
+        </div>
+      </div>
+    </motion.header>
+  );
+}

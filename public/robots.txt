@@ -1,0 +1,23 @@
+# Permitir todos os bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://arthurrelke.com/sitemap.xml
+
+# Bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+Allow: /
+
+User-agent: *
+Allow: /
