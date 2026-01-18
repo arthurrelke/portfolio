@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { photographerInfo } from '@/data/photographer';
 import { getFeaturedProjects } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -158,24 +158,6 @@ export default function Home() {
                             className="text-base font-light hover:text-muted-foreground transition-colors"
                           >
                             {photographerInfo.email}
-                          </a>
-                        </div>
-                      </div>
-
-                      {/* Phone */}
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-sm bg-accent">
-                          <Phone className="size-5 text-muted-foreground" />
-                        </div>
-                        <div className="space-y-1">
-                          <p className="text-sm font-light tracking-wide text-muted-foreground">
-                            Telefone
-                          </p>
-                          <a
-                            href={`tel:${photographerInfo.phone}`}
-                            className="text-base font-light hover:text-muted-foreground transition-colors"
-                          >
-                            {photographerInfo.phone}
                           </a>
                         </div>
                       </div>

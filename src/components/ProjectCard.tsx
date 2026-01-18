@@ -59,6 +59,27 @@ export function ProjectCard({
             onLoad={() => setIsLoaded(true)}
           />
           
+          {/* Mobile tap indicator - only visible on mobile */}
+          <div className="md:hidden absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="bg-black/30 backdrop-blur-sm rounded-full p-3 border border-white/10">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className="text-white/80"
+              >
+                <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+                <path d="M13 13l6 6"/>
+              </svg>
+            </div>
+          </div>
+          
           {/* Overlay with gradient and text */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             <div className="absolute bottom-0 left-0 right-0 p-6 space-y-2">
