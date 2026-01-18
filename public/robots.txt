@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://arthurrelke.com/sitemap.xml
+Sitemap: https://portfolio-seven-umber-ldnh0lh5ob.vercel.app/sitemap.xml
 
 # Bots específicos
 User-agent: Googlebot
