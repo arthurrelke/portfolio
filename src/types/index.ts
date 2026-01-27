@@ -1,5 +1,13 @@
 /**
  * Core TypeScript interfaces for GIS & Urban Planning Portfolio
+ * 
+ * This portfolio showcases professional work in:
+ * - Geographic Information Systems (GIS) Analysis
+ * - Urban Planning and Design
+ * - Spatial Data Visualization
+ * - Computer Vision Applied to Urban Studies
+ * - Architecture and Urban Development
+ * 
  * Based on SPECIFICATION.md data model requirements
  */
 
@@ -30,7 +38,10 @@ export interface Project {
   slug: string;
 }
 
-export interface PhotographerInfo {
+/**
+ * Professional profile information for GIS analyst and urban planner
+ */
+export interface ProfileInfo {
   name: string;
   tagline: string;
   heroIntroduction: string;
@@ -55,7 +66,7 @@ export interface PhotographerInfo {
 export interface ContactSubmission {
   name: string;
   email: string;
-  projectType: 'editorial' | 'commercial' | 'personal';
+  projectType: 'gis-analysis' | 'urban-planning' | 'spatial-data' | 'consulting' | 'other';
   message: string;
   timestamp: Date;
 }

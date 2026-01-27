@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Github } from 'lucide-react';
-import { photographerInfo } from '@/data/photographer';
+import { profileInfo } from '@/data/profile';
 import { Separator } from '@/components/ui/separator';
 
 /**
@@ -14,14 +14,14 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Copyright */}
           <p className="text-sm text-muted-foreground font-light tracking-wide">
-            © {currentYear} {photographerInfo.name}. All rights reserved.
+            © {currentYear} {profileInfo.name}. All rights reserved.
           </p>
 
           {/* Social Links */}
           <div className="flex items-center gap-6">
-            {photographerInfo.socialLinks.instagram && (
+            {profileInfo.socialLinks.instagram && (
               <a
-                href={photographerInfo.socialLinks.instagram}
+                href={profileInfo.socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -30,9 +30,9 @@ export function Footer() {
                 <Instagram className="size-5" />
               </a>
             )}
-            {photographerInfo.socialLinks.linkedin && (
+            {profileInfo.socialLinks.linkedin && (
               <a
-                href={photographerInfo.socialLinks.linkedin}
+                href={profileInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -41,9 +41,9 @@ export function Footer() {
                 <Linkedin className="size-5" />
               </a>
             )}
-            {photographerInfo.socialLinks.github && (
+            {profileInfo.socialLinks.github && (
               <a
-                href={photographerInfo.socialLinks.github}
+                href={profileInfo.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"

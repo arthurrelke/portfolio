@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { Mail, MapPin } from 'lucide-react';
-import { photographerInfo } from '@/data/photographer';
+import { Mail, MapPin, Instagram, Linkedin, Github } from 'lucide-react';
+import { profileInfo } from '@/data/profile';
 import { getFeaturedProjects } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
 import { ScrollIndicator } from '@/components/ui/ScrollIndicator';
@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator';
 
 /**
  * Homepage with immersive hero section and featured projects grid
- * Showcases photographer's best work with minimal, elegant design
+ * Showcases professional's best work with minimal, elegant design
  */
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -57,7 +57,7 @@ export default function Home() {
               duration: 1,
               delay: 0.2
             }}>
-              {photographerInfo.name.toUpperCase()}
+              {profileInfo.name.toUpperCase()}
             </motion.h1>
             
             <motion.div className="text-xl md:text-2xl font-light tracking-wide text-white/90 space-y-4" initial={{
@@ -70,9 +70,55 @@ export default function Home() {
               duration: 1,
               delay: 0.4
             }}>
-              {photographerInfo.tagline.split(/\n+/).filter(line => line.trim()).map((line, index) => (
+              {profileInfo.tagline.split(/\n+/).filter(line => line.trim()).map((line, index) => (
                 <p key={index}>{line}</p>
               ))}
+            </motion.div>
+
+            {/* Social Links */}
+            <motion.div className="flex items-center justify-center gap-6 pt-4" initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 1,
+              delay: 0.6
+            }}>
+              {profileInfo.socialLinks.instagram && (
+                <a
+                  href={profileInfo.socialLinks.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="size-6" />
+                </a>
+              )}
+              {profileInfo.socialLinks.linkedin && (
+                <a
+                  href={profileInfo.socialLinks.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="size-6" />
+                </a>
+              )}
+              {profileInfo.socialLinks.github && (
+                <a
+                  href={profileInfo.socialLinks.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors"
+                  aria-label="GitHub"
+                >
+                  <Github className="size-6" />
+                </a>
+              )}
             </motion.div>
 
           </motion.div>
@@ -129,7 +175,7 @@ export default function Home() {
                       Envie uma Mensagem
                     </h2>
                     <p className="text-muted-foreground font-light">
-                      Preencha o formulário abaixo e entrarei em contato em até 24-48 horas. {photographerInfo.availability}
+                      Preencha o formulário abaixo e entrarei em contato em até 24-48 horas. {profileInfo.availability}
                     </p>
                     <ContactForm />
                   </div>
@@ -154,10 +200,10 @@ export default function Home() {
                             E-mail
                           </p>
                           <a
-                            href={`mailto:${photographerInfo.email}`}
+                            href={`mailto:${profileInfo.email}`}
                             className="text-base font-light hover:text-muted-foreground transition-colors"
                           >
-                            {photographerInfo.email}
+                            {profileInfo.email}
                           </a>
                         </div>
                       </div>
@@ -172,19 +218,19 @@ export default function Home() {
                         Sobre
                       </h3>
                       <p className="text-lg font-light leading-relaxed text-muted-foreground">
-                        {photographerInfo.biography}
+                        {profileInfo.biography}
                       </p>
                     </div>
                   </div>
                 </div>
               </ScrollReveal>
 
-              {/* Right: Photo */}
+              {/* Right: Portrait Image */}
               <ScrollReveal delay={0.2}>
                 <div className="h-full min-h-[600px] md:min-h-[800px]">
                   <img 
-                    src={photographerInfo.portraitImage} 
-                    alt={photographerInfo.name}
+                    src={profileInfo.portraitImage} 
+                    alt={profileInfo.name}
                     className="w-full h-full rounded-lg object-cover object-center"
                   />
                 </div>

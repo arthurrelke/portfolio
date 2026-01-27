@@ -1,6 +1,6 @@
-import type { PhotographerInfo } from '@/types';
+import type { ProfileInfo } from '@/types';
 
-export const photographerInfo: PhotographerInfo = {
+export const profileInfo: ProfileInfo = {
   name: 'Arthur Relke',
   tagline: `Analista e Desenvolvedor GIS
 
@@ -23,6 +23,6 @@ Estudante de Arquitetura e Urbanismo - @UFMT`,
     linkedin: 'https://www.linkedin.com/in/arthur-relke/',
     github: 'https://github.com/arthurrelke'
   },
-  // Photo by Joshua Sun on Unsplash
+  // Professional portrait image
   portraitImage: '/foto.jpg',
 };

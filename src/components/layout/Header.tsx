@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
-import { photographerInfo } from '@/data/photographer';
+import { profileInfo } from '@/data/profile';
 import { cn } from '@/lib/utils';
 
 /**
  * Main header component with scroll-aware styling
- * Simple navigation showing only photographer name as home link
+ * Simple navigation showing only professional name as home link
  */
 export function Header() {
   const location = useLocation();
@@ -48,7 +48,7 @@ export function Header() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              {photographerInfo.name.toUpperCase()}
+              {profileInfo.name.toUpperCase()}
             </motion.span>
           </Link>
         </div>
