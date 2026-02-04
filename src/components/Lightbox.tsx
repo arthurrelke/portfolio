@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Button } from '@/components/ui/button';
 import type { ProjectImage } from '@/types';
 import { cn } from '@/lib/utils';
@@ -93,6 +94,15 @@ export function Lightbox({
         className="max-w-screen max-h-screen w-screen h-screen p-0 bg-black/95 border-none [&>button]:hidden !overflow-visible"
         onInteractOutside={(e) => e.preventDefault()}
       >
+        <VisuallyHidden>
+          <DialogTitle>
+            {currentImage.alt || `Image ${currentIndex + 1} of ${totalImages}`}
+          </DialogTitle>
+          <DialogDescription>
+            {currentImage.caption || 'Project image viewer'}
+          </DialogDescription>
+        </VisuallyHidden>
+        
         <div className="relative w-full h-full overflow-hidden">
           {/* Close Button */}
           <Button

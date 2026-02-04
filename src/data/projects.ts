@@ -222,20 +222,20 @@ export const projects: Project[] = [
       },
       {
         id: '5-5',
-        src: '/archviz/arch5.png',
+        src: '/archviz/arch5.avif',
         alt: 'Visualização Arquitetônica - Imagem 5',
         aspectRatio: 'portrait',
         gridWith: '5-6'
       },
       {
         id: '5-6',
-        src: '/archviz/arch6.png',
+        src: '/archviz/arch6.avif',
         alt: 'Visualização Arquitetônica - Imagem 6',
         aspectRatio: 'portrait'
       },
       {
         id: '5-7',
-        src: '/archviz/arch7.png',
+        src: '/archviz/arch7.avif',
         alt: 'Visualização Arquitetônica - Imagem 7',
         aspectRatio: 'landscape'
       }
