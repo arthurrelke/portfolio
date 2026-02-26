@@ -16,6 +16,7 @@ import { Analytics } from "@vercel/analytics/react";
 // Code-split route components for better performance
 const Home = lazy(() => import("./pages/Home"));
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+const Resume = lazy(() => import("./pages/Resume"));
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,14 @@ function AnimatedRoutes() {
           element={
             <PageTransition>
               <ProjectDetail />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/curriculo"
+          element={
+            <PageTransition>
+              <Resume />
             </PageTransition>
           }
         />

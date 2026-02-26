@@ -14,7 +14,6 @@ export function Header() {
   
   // Header is transparent only on homepage hero when not scrolled
   const isTransparent = location.pathname === '/' && !isScrolled;
-  const isHomepage = location.pathname === '/';
 
   return (
     <motion.header
@@ -29,10 +28,7 @@ export function Header() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className={cn(
-          "flex items-center h-16",
-          isHomepage ? "justify-between" : "justify-center"
-        )}>
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
             to="/"
@@ -51,6 +47,21 @@ export function Header() {
               {profileInfo.name.toUpperCase()}
             </motion.span>
           </Link>
+
+          {/* Navigation */}
+          <nav>
+            <Link
+              to="/curriculo"
+              className={cn(
+                'text-sm font-light tracking-wide transition-all duration-300',
+                isTransparent
+                  ? 'text-white/80 hover:text-white'
+                  : 'text-muted-foreground hover:text-foreground'
+              )}
+            >
+              Currículo
+            </Link>
+          </nav>
         </div>
       </div>
     </motion.header>

@@ -41,10 +41,40 @@ export interface Project {
 /**
  * Professional profile information for GIS analyst and urban planner
  */
+
+export type TechnicalCategory = 'Sensoriamento Remoto' | 'Geoprocessamento' | 'Programação';
+export type SkillDomain = 'GIS' | 'Programação' | 'Design' | 'Idiomas';
+
+export interface Experience {
+  role: string;
+  company: string;
+  period: string;
+  achievements: string[];
+}
+
+export interface TechnicalKnowledge {
+  category: TechnicalCategory;
+  items: string[];
+}
+
+export interface Skill {
+  name: string;
+  domain: SkillDomain;
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  period: string;
+  status?: string;
+}
+
 export interface ProfileInfo {
   name: string;
+  fullName: string;
   tagline: string;
   heroIntroduction: string;
+  summary: string;
   biography: string;
   approach: string;
   awards: string[];
@@ -61,6 +91,10 @@ export interface ProfileInfo {
     github?: string;
   };
   portraitImage: string;
+  experience: Experience[];
+  technicalKnowledge: TechnicalKnowledge[];
+  skills: Skill[];
+  certifications: Education[];
 }
 
 export interface ContactSubmission {

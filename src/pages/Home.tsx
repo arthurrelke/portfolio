@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Instagram, Linkedin, Github } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { profileInfo } from '@/data/profile';
 import { getFeaturedProjects } from '@/data/projects';
 import { ProjectCard } from '@/components/ProjectCard';
@@ -119,6 +120,25 @@ export default function Home() {
                   <Github className="size-6" />
                 </a>
               )}
+            </motion.div>
+
+            {/* Currículo Button */}
+            <motion.div initial={{
+              opacity: 0,
+              y: 20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 1,
+              delay: 0.8
+            }}>
+              <Link
+                to="/curriculo"
+                className="inline-block px-8 py-3 border border-white/40 text-white/90 text-sm font-light tracking-widest uppercase hover:bg-white/10 hover:border-white/60 transition-all duration-300"
+              >
+                Currículo
+              </Link>
             </motion.div>
 
           </motion.div>
